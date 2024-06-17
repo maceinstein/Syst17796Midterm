@@ -15,13 +15,22 @@ import java.util.Scanner;
  */
 public class ArithmeticBase 
 {
+ public enum Operation{
+     PLUS,MINUS,TIMES,DIVIDE
+ };
  public double x,y;
+ private Operation operation;
+ public Operation getOperation(){
+     return this.operation;
+ };
+  public void setOperation(){
+     this.operation = operation;
+ };
+ 
+ 
     double calculate(double x, double y) 
         {
-        Scanner sc =new Scanner(System.in);
-        System.out.println("Enter arithmetic operation to Perform: ");
-        String s= sc.next();
-        switch (s.toUpperCase()) 
+        switch (operation) 
         {
             case "PLUS":
                 return x + y;
